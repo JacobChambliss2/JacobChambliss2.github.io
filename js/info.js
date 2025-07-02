@@ -368,7 +368,7 @@ switch (entercount) {
       imageDiv.className = "imageContainer";
       imageDiv.id = "actionShots";
       const imageSources = [
-        "images/Ping.png",
+        "images/IMG_0636.png",
         "images/help.png",
         "images/working.png",
         "images/Pong.png"
