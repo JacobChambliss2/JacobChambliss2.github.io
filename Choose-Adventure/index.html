@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cube Adventure</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="inventory" class="inventory">
+        Inventory: <span id="inventory-items">None</span>
+    </div>
+
+    <div class="room-container">
+        <div class="room" id="room">
+            <div class="wall front" id="front-wall">
+                <div class="wall-text-group">
+                    <div class="bigger-wall-text">No Escape</div>
+                    <div class="wall-text">(Rotate with Arrow Keys)</div>
+                </div>
+            </div>
+            <div class="wall back" id="back-wall"></div>
+            <div class="wall left" id="left-wall"></div>
+            <div class="wall right" id="right-wall">
+                <div class="wall-text-group">
+                    <div class="bigger-text-right">What Are You Doing Here?</div>
+                </div>
+            </div>
+            <div class="wall floor" id="floor-wall"></div>
+            <div class="wall ceiling" id="ceiling-wall"></div>
+        </div>
+    </div>
+
+    <script src="cube-controls.js"></script>
+    <script src="game-logic.js"></script>
+</body>
+
+</html>

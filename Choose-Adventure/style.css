@@ -1,0 +1,139 @@
+/* Make “size” the smaller of viewport width/height so our cube always fits */
+
+:root {
+  --size: 70vmin;
+  /* half the size, for convenience */
+  --half: calc(var(--size) / 2);
+}
+
+/* reset */
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.hotspot{
+    color:antiquewhite;
+}
+.sigils{
+    width: 250px;
+    height: 250px;
+    margin: 30px;
+    border-radius: 50%;
+}
+
+/* perspective container */
+.room-container {
+  width: var(--size);
+  height: var(--size);
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  position: relative;
+}
+
+/* the cube */
+.room {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center center center;
+  /* No translateZ here! */
+}
+
+.key_img{
+    width:100px;
+    height:100px;
+}
+
+/* all inner walls */
+.wall {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: visible;
+  opacity: 1;
+}
+
+/* front wall: right in front of you */
+.front {
+  background: #ff6961;
+  opacity: 1;
+  transform: translateZ(var(--half));
+}
+/* back wall: opposite the front */
+.back {
+  background: #fdfd96;
+  transform: rotateY(180deg) translateZ(var(--half));
+}
+/* left wall */
+.left {
+  background: #77dd77;
+  transform: rotateY(-90deg) translateZ(var(--half));
+}
+/* right wall */
+.right {
+  background: #84b6f4;
+  transform: rotateY(90deg) translateZ(var(--half));
+}
+/* floor */
+.floor {
+  background: #cbaacb;
+  transform: rotateX(90deg) translateZ(var(--half));
+}
+/* ceiling */
+.ceiling {
+  background: #999;
+  transform: rotateX(-90deg) translateZ(var(--half));
+}
+
+/* text on the wall */
+.wall-text {
+  color: #222;
+  font-size: 5vmin;  /* Slightly smaller font */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  pointer-events: none;
+}
+.bigger-wall-text {
+  font-size: 18vmin; /* Reduced size so text fits better */
+  font-style: bold;
+  color: #222;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  pointer-events: none;
+}
+.bigger-text-right{
+  font-size: 17vmin;
+  font-style: bold;
+  color: #931212;
+  font-family: 'Creepster', cursive;
+  text-align: center;
+  pointer-events: none;
+}
+
+.wall-text-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 10px);   /* Reduced width margin */
+  height: calc(100% - 10px);  /* Reduced height margin */
+  padding: 10px;             /* Reduced padding */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Apply Creepster font to all walls except front */
+.wall:not(.front) .wall-text,
+.wall:not(.front) .bigger-wall-text,
+.wall:not(.front) .bigger-text-right {
+  font-family: 'Creepster', cursive !important;
+}
