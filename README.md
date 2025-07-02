@@ -1,2 +1,0 @@
-# portfolioNexTech
-NexTech Portfolio Website
