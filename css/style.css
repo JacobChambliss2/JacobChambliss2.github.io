@@ -1,0 +1,256 @@
+
+#intro-text {
+  text-align: center;
+  margin: 20px auto;
+  font-size: 35px;
+  color: whitesmoke;
+}
+
+#intro-text h1 {
+  transition: color 0.2s, text-shadow 0.2s, opacity 0.2s;
+  color: #fff;
+  opacity: 0.2;
+  text-shadow: 0 0 2px #fff, 0 0 10px #0ff, 0 0 20px #0ff;
+  margin: 10px 0;
+}
+
+.flicker {
+  animation: flickerAnim 0.12s infinite alternate;
+  opacity: 1;
+  text-shadow: 0 0 8px #fff, 0 0 24px #0ff, 0 0 48px #0ff;
+}
+
+.flicker-strong {
+  opacity: 1;
+  text-shadow: 0 0 24px #fff, 0 0 64px #0ff, 0 0 128px #0ff;
+}
+
+.blown {
+  opacity: 0.1;
+  color: #222;
+  visibility: hidden;
+  transition: opacity 0.5s, color 0.5s;
+}
+
+@keyframes flickerAnim {
+  0%   { opacity: 0.7; }
+  20%  { opacity: 1;   }
+  40%  { opacity: 0.6; }
+  60%  { opacity: 1;   }
+  80%  { opacity: 0.8; }
+  100% { opacity: 1;   }
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+.section2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#solarSystem {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+#solarSystem p {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 30%;
+  transform: translate(-50%, -50%);
+  font-size: 46px; 
+  font-weight: 500; 
+  font-family: 'Segoe UI', 'Poppins', sans-serif;
+  text-align: center;
+  line-height: 1.4;
+  pointer-events: none;
+  border-radius: 50%;
+  padding: 7% 5%;
+  z-index: 1000;
+}
+
+#solarSystem h1 {
+  text-decoration: underline;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 54px; 
+  font-weight: 600; 
+  font-family: 'Segoe UI', 'Poppins', sans-serif;
+  text-align: center;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+  border-radius: 50%;
+  padding: 10% 10%;
+  z-index: 1001;
+}
+
+.pictureBox, .pictureBox3d, .pictureBox3dSun,.pictureBox3dMercury, .pictureBox3dVenus,.pictureBox3dEarth,.pictureBox3dMars,.pictureBox3dJupiter,.pictureBox3dSaturn,.pictureBox3dUranus, .pictureBox3dNeptune, .pictureBox3dPluto {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  pointer-events: none;
+  transition: transform 0.1s linear;
+  will-change: transform, left, top;
+}
+
+.imageContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-rows: repeat(2, 300px);
+  gap: 5px; 
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  border-radius: 20%;
+  transform: translate(-50%, -50%);
+  width: 605px;
+  height: 605px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1001;
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+.imageContainer img {
+  
+  border: 3px solid rgb(140, 140, 140);
+  box-sizing: border-box; 
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+.imageCircleContainer {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 580px;
+  height: 580px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.35);
+  z-index: 1001;
+  pointer-events: none; 
+}
+
+.circleSkillIcon {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.9);
+  pointer-events: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.container5 {
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  grid-template-rows: repeat(1, 400px);
+  gap: 15px; /* More space between images */
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  border-radius: 2%;
+  transform: translate(-50%, -50%);
+  width: 840px; /* slightly wider for bigger gaps */
+  height: 420px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e0e9ff 0%, #a7d8ff 100%);
+  box-shadow: 0 8px 20px rgba(0, 0, 50, 0.3);
+  z-index: 2001;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.container5 img {
+  border-radius: 15px;
+  border: 3px solid rgba(140, 140, 140, 0.7);
+  box-sizing: border-box;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.container5 img:hover,
+.container5 img:focus {
+  transform: scale(1.07);
+  box-shadow: 0 8px 15px rgba(24, 144, 255, 0.6);
+  border-color: #1890ff;
+  outline: none;
+}
+
+.contactButtonJupiter {
+  background: linear-gradient(135deg, #8B4513, #FF7F50); /* reddish brown to coral */
+  border: none;
+  padding: 16px 36px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #FFF5E1; /* cream text */
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(255, 165, 100, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.contactButtonJupiter:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #A0522D, #FF6347); /* deeper storm swirl */
+  box-shadow: 0 0 20px rgba(255, 165, 100, 0.9);
+}
+
+#enterPrompt {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 12px 20px;
+  font-family: 'Segoe UI', 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #FFD700;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  animation: blinkText 2s step-start infinite;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+@keyframes blinkText {
+  50% {
+    opacity: 0;
+  }
+}
