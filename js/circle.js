@@ -19,7 +19,7 @@ as well as using vertical positioning to create long bands of color
 
 once the last square reaches the center, a function in info.js is called
 */
-N = 2000;
+N = 200;
 let R = 200;
 let rchange = 0;
 let perspective = 400;
